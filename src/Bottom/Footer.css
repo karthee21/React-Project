@@ -1,0 +1,13 @@
+.footer{
+    text-align: left;
+    display: grid;
+    grid-template-columns: 20% 10% 15% 15%;
+    justify-content: space-evenly;
+    background: #0f3460;
+    color: white;
+}
+.footer .col div p{
+    font-size: 10px;
+    color: #8698af;
+    margin: 2px;
+}

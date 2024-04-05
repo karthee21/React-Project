@@ -1,0 +1,28 @@
+#carouselExampleInterval>div>div{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    background: #f6f9fc;
+    justify-content: space-evenly;
+}
+#carouselExampleInterval>div>div>div:first-child h2{
+    margin-bottom: 50px;
+    font-size: 65px;
+    text-align: left;
+}
+#carouselExampleInterval>div>div>div:first-child p{
+    font-size: 25px;
+    color: #000000a6;
+    text-align: left; 
+}
+.service{
+    display: grid;
+    grid-template-columns: repeat(4,23%);
+    justify-content: space-evenly;
+}
+.service>div{
+    padding: 10px;
+}
+.service>div h4{
+    margin: 20px 0px;
+}
