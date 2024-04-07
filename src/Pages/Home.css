@@ -60,12 +60,8 @@
 .new-arr img{
     height: 400px;
 }
-.new-arr .card button{
+.new-arr .card button {
     width: fit-content;
     align-self: end;
-    padding: 8px 10px;
-    border-radius: 50%;
-    border: 1px solid #ededf1;
     color: #002756;
-    background: white;
 }

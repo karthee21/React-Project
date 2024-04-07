@@ -3,10 +3,20 @@ import './Home.css'
 
 
 // -----------------------------------
-import SliderData, { discoutProducts, products } from '../Assets/products'
+import SliderData, { discoutProducts, Products } from '../Assets/products'
 import { serviceData } from '../Assets/products'
-import { Plus } from 'react-feather'
+import { PlusCircle } from 'react-feather'
 import { LiaStarSolid } from "react-icons/lia";
+
+// const keyhandler = () => {
+//     if ((Products.id >= 10 && Products.id <= 16) || (Products.id >= 20 && Products.id <= 25)) {
+//         return `range_${Products.id}`; // Generate a key based on the id and the range it falls into
+//     } else {
+//         console.log(`kkk`)
+//         return null; // Return null for ids outside the specified ranges
+//     }
+// }
+const specificIds = ["10", "11", "12", "13", "14", "15", "20", "21", "22", "23"];
 
 function Home() {
     return (
@@ -79,7 +89,7 @@ function Home() {
                                         <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
                                     </section>
                                     <h2>${Discount.price}</h2>
-                                    <button><Plus /></button>
+                                    <button><PlusCircle className='bg-primary' /></button>
                                 </div>
                             </div>))}
                     </div>
@@ -87,29 +97,28 @@ function Home() {
             </div>
 
             {/* ------------------------------------NEW ARRIVALS---------------------------------------- */}
-            <div className='new-arr'>
+            <div className='big-dis'>
                 <div>
                     <h2>New Arrivals</h2>
                 </div>
 
                 <div className='container'>
                     <div className='row'>
-                        {products.map((Discount, index) => (
-                            <div key={index} className='col-md-4 my-3'>
-                                <div className='card'>
-                                    <img src={Discount.imgUrl} alt='img' />
-                                    <p>{Discount.productName}</p>
-                                    <section>
-                                        <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
-                                        <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
-                                        <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
-                                        <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
-                                        <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
-                                    </section>
-                                    <h2>${Discount.price}</h2>
-                                    <button><Plus /></button>
+                        {Products.map((product) => (
+                            specificIds.includes(product.id) && ( // Only render if the product ID is in specificIds
+                                <div className='col-md-4' key={product.id}>
+                                    <div className='card'>
+                                        <img src={product.imgUrl} alt={product.productName} />
+                                        <p>{product.productName}</p>
+                                        <h2>${product.price}</h2>
+                                        <h2 className="position-absolute bottom-0 end-0 m-3"
+                                            style={{ borderRadius: "50px", width: "25px", height: "25px" }}>
+                                            <PlusCircle />
+                                        </h2>
+                                    </div>
                                 </div>
-                            </div>))}
+                            )
+                        ))}
                     </div>
                 </div>
             </div>
