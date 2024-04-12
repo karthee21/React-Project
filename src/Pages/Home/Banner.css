@@ -1,3 +1,6 @@
+#carouselExampleInterval{
+    padding-top: 120px;
+}
 #carouselExampleInterval>div>div{
     align-items: center;
     display: grid;

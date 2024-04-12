@@ -1,0 +1,14 @@
+.banner {
+    background-image: url(./table.jpg);
+    background-size: 100%;
+    background-position: center;
+    height: 350px;
+    padding-top: 120px;
+    align-content: center;
+    filter: brightness(50%);
+    color: white;
+}
+.search{
+    display: flex;
+    justify-content: space-around;
+}
