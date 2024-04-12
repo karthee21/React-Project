@@ -1,0 +1,12 @@
+.new-arr .card{
+    text-align: left;
+    padding: 15px;
+}
+.new-arr img{
+    height: 400px;
+}
+.new-arr .card button {
+    width: fit-content;
+    
+    color: #002756;
+}

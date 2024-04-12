@@ -1,0 +1,11 @@
+.service{
+    display: grid;
+    grid-template-columns: repeat(4,23%);
+    justify-content: space-evenly;
+}
+.service>div{
+    padding: 10px;
+}
+.service>div h4{
+    margin: 20px 0px;
+}

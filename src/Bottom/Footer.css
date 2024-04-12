@@ -5,9 +5,11 @@
     justify-content: space-evenly;
     background: #0f3460;
     color: white;
+    padding-top: 20px;
 }
 .footer .col div p{
     font-size: 10px;
     color: #8698af;
     margin: 2px;
+    font-size: large;
 }

@@ -1,0 +1,17 @@
+.card{
+    text-align: left;
+    height: 100%;
+    justify-content: center;
+}
+.card p,.card h2, .card section{
+    margin-left: 15px;
+}
+.card button{
+    border: none;
+    background: none;
+}
+.card button svg{
+    width: 45px;
+    height: 45px;
+    stroke-width: 0.5px;
+}

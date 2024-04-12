@@ -1,9 +1,10 @@
 import React from 'react'
 import { ShoppingCart, User } from "react-feather";
 import { Link } from "react-router-dom";
+import "./Header.css"
 function Header() {
     return (
-        <div>
+        <div className='header'>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <a class="navbar-brand">
@@ -18,7 +19,7 @@ function Header() {
                                 <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page">shop</a>
+                                <Link class="nav-link active" aria-current="page" to="/shop">shop</Link>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page">cart</a>
