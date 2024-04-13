@@ -5,6 +5,9 @@
     text-align: left;
     padding: 15px;
 }
+.big-dis .card a{
+    text-decoration: none;
+}
 .big-dis .card p:first-child{
     background: navy;
     color: white;

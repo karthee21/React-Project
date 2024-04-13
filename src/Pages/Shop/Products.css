@@ -1,14 +1,34 @@
 .banner {
-    background-image: url(./table.jpg);
-    background-size: 100%;
-    background-position: center;
     height: 350px;
     padding-top: 120px;
-    align-content: center;
-    filter: brightness(50%);
+    background-image: linear-gradient(45deg, #544010, transparent);
+}
+.banner h2{
     color: white;
 }
 .search{
+    margin: 40px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+.search select{
+    background: navy;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.search input{
+    width: 85%;
+    border-radius: 25px;
+    background: gainsboro;
+    border: none;
+    padding: 15px;
+}
+.search input:focus{
+    border-color: navy;
+}
+.search div svg{
+    position: absolute;
+    top: 71%;
+    right: 160px;
 }

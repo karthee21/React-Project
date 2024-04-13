@@ -8,10 +8,8 @@ function NewArr() {
     return (
         <>
             {/* ------------------------------------NEW ARRIVALS---------------------------------------- */}
-            <div className='big-dis'>
-                <div>
-                    <h2>New Arrivals</h2>
-                </div>
+            <div className='new-arr'>
+                
 
                 <div className='container'>
                     <div className='row '>

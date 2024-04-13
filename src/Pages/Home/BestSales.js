@@ -6,10 +6,8 @@ import { LiaStarSolid } from 'react-icons/lia';
 const BestSales = () => {
   const specificIds = ['01', '02', '03', '26', '04', '05', '06', '27',];
   return (
-    <>
-      <div>
-        <h2>Best Sales</h2>
-      </div>
+    <div className='best-sales'>
+     
       <div className='container'>
         <div className='row '>
           {Products.map((product) => (
@@ -35,7 +33,7 @@ const BestSales = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

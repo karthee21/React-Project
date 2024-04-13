@@ -20,9 +20,18 @@ function Home() {
         <>
             <Banner />
             <Service />
+            <div>
+                <h2>Big Discount</h2>
+            </div>
             <BigDis />
+
+            <h2>New Arrivals</h2>
+
             <NewArr />
-            <BestSales/>
+
+            <h2>Best Sales</h2>
+
+            <BestSales />
         </>
     )
 }
