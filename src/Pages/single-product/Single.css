@@ -1,3 +1,19 @@
-.container{
+.single{
     padding-top: 120px;
+}
+.row div:last-child{
+    text-align: justify;
+}
+.row div:last-child section{
+    display: flex;
+    align-items: baseline;
+}
+.row div:last-child section p{
+    margin: 10px 10px 10px 50px;
+}
+.row div:last-child form input{
+    width: 25%;
+}
+.row div:last-child .rating section span{
+    margin-left: 20px;
 }

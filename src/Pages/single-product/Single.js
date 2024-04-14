@@ -1,28 +1,39 @@
 import React from 'react'
 import { discoutProducts } from '../../Assets/products'
-import "./single.css"
+import "./Single.css"
+import { LiaStarSolid } from 'react-icons/lia';
 const Single = () => {
+
+    const item = discoutProducts[0]; // Assuming you are accessing the first item in the array for demonstration
+    const averageRating = item.reviews.reduce((total, review) => total + review.rating, 0) / item.reviews.length;
+
     return (
-        <div>
+        <div className='single'>
             <div class="container mt-4">
                 <div class="row">
                     <div class="col-md-6">
-                    <img src={discoutProducts.imgUrl} alt='img' className='w-100'/>
+                        <img src={item.imgUrl} alt='img' className='w-100' />
                     </div>
                     <div class="col-md-6">
-                        <h2>{discoutProducts.productName}</h2>
+                        <h2>{item.productName}</h2>
                         <div class="rating">
-                            ⭐⭐⭐⭐⭐
+                            <section>
+                                <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
+                                <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
+                                <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
+                                <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
+                                <LiaStarSolid style={{ color: 'rgb(241 194 74)' }} />
+                                <span>{averageRating} rating</span>
+                            </section>
                         </div>
-                        <p class="price">$193</p>
-                        <p class="category">Category: Sofa</p>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quis illo voluptates labore tempor!
-                        </p>
+                        <section>
+                            <h3 class="price">${item.price}</h3>
+                            <p class="category">Category: {item.category}</p>
+                        </section>
+                        <p class="description">{item.description}</p>
                         <form>
                             <div class="mb-3">
-                                <label for="quantity" class="form-label">Quantity</label>
-                                <input type="number" class="form-control" id="quantity" value="1"/>
+                                <input type="number" className='form-control' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                             </div>
                             <button type="submit" class="btn btn-primary">Add to Cart</button>
                         </form>
