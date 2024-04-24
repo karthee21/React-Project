@@ -1,6 +1,40 @@
+.row{
+    display: flex;
+    justify-content: space-evenly;
+}
 .new-arr .card{
     text-align: left;
     padding: 15px;
+}
+
+.card .heart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 0.5px solid gray;
+    padding: 6px;
+    font-size: 40px;
+    border-radius: 50%;
+    visibility: hidden;
+    transition: visible 2s;
+    transition-delay: 1s;
+}
+.card:hover .heart{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: 0.5px solid gray;
+    padding: 6px;
+    font-size: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px blue;
+    transition: 1s;
+    /* view-transition-name: 1s; */
+    visibility: visible;
+}
+.card a .heart:hover {
+    box-shadow: -2px -2px 3px rgb(247, 31, 31);
+    opacity: 0.8;
 }
 .new-arr img{
     height: 400px;

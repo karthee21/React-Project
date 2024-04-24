@@ -1,14 +1,46 @@
-.big-dis{
+.big-dis {
     background: #f6f9fc;
 }
-.big-dis .card{
+
+.big-dis .card {
     text-align: left;
     padding: 15px;
 }
-.big-dis .card a{
+.card a{
+    color: black;
+}
+.card .heart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 0.5px solid gray;
+    padding: 6px;
+    font-size: 40px;
+    border-radius: 50%;
+    visibility: hidden;
+    transition: visibility 6s;
+}
+.card a .heart:hover {
+    box-shadow: -2px -2px 3px rgb(247, 31, 31);
+    opacity: 0.8;
+}
+.card:hover .heart {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: 0.5px solid gray;
+    padding: 6px;
+    font-size: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px blue;
+    visibility: visible;
+}
+
+.big-dis .card a {
     text-decoration: none;
 }
-.big-dis .card p:first-child{
+
+.big-dis .card p:first-child {
     background: navy;
     color: white;
     font-weight: 600;
@@ -16,10 +48,12 @@
     width: fit-content;
     border-radius: 25px;
 }
-.big-dis img{
+
+.big-dis img {
     height: 400px;
 }
-.card button{
+
+.card button {
     border: none;
     background: none;
     margin: 20px 10px;

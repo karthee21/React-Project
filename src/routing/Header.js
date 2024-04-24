@@ -22,7 +22,7 @@ function Header() {
                                 <Link class="nav-link active" aria-current="page" to="/shop">shop</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page">cart</a>
+                                <Link class="nav-link active" aria-current="page" to="/cart">cart</Link>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page"><User /></a>

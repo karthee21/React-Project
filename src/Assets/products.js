@@ -39,7 +39,7 @@ import { AiFillCreditCard } from "react-icons/ai";
 import { MdSecurity } from "react-icons/md";
 import { MdHeadphones } from "react-icons/md";
 
- const SliderData = [
+export const SliderData = [
   {
       id: 1,
       title: "50% Off For Your First Shopping",

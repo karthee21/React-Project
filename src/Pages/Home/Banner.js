@@ -3,28 +3,29 @@ import SliderData from '../../Assets/products'
 import './Banner.css'
 
 function Banner() {
-    return (
 
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+
+    return (
+        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner bg-light">
                 {SliderData.length > 0 ? (
                     SliderData.map((item, id) => (
 
-                        <div className="carousel-item active" key={id}>
+                        <div className={`carousel-item ${id === 0 ? 'active' : ''}`} key={id}>
                             <div>
                                 <h2>{item.title}</h2>
                                 <p>{item.desc}</p>
                             </div>
                             <div>
-                                <img src={item.cover} alt="" />
+                                <img src={item.cover} className="d-block w-100" alt="" />
                             </div>
                         </div>
 
                     ))
                 ) :
-                    <div class="spinner-grow text-info" role="status">
+                    (<div class="spinner-grow text-info" role="status">
                         <span class="">Loading...</span>
-                    </div>}
+                    </div>)}
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>

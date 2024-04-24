@@ -1,19 +1,64 @@
-.best-sales{
+.best-sales {
     background: #f6f9fc;
 }
-.card{
+
+.card {
     text-align: left;
     height: 100%;
     justify-content: center;
 }
-.card p,.card h2, .card section{
+
+.card .heart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 0.5px solid gray;
+    padding: 6px;
+    font-size: 40px;
+    border-radius: 50%;
+    visibility: hidden;
+    transition: opacity 2s linear;
+    transform: translate(0);
+    opacity: 1;
+}
+
+.card:hover .heart {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: 0.5px solid gray;
+    padding: 6px;
+    font-size: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px blue;
+    transition: 1s;
+    visibility: visible;
+    transform: translate(5px);
+    opacity: 0.5;
+    
+}
+
+.card a .heart:hover {
+    box-shadow: -2px -2px 3px rgba(247, 31, 31, 0.705);
+    opacity: 0.8;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card p,
+.card h2,
+.card section {
     margin-left: 15px;
 }
-.card button{
+
+.card button {
     border: none;
     background: none;
 }
-.card button svg{
+
+.card button svg {
     width: 45px;
     height: 45px;
     stroke-width: 0.5px;

@@ -17,3 +17,11 @@
 .row div:last-child .rating section span{
     margin-left: 20px;
 }
+.row{
+    display: flex;
+    align-items: center;
+}
+/* ---------------------- */
+a{
+    text-decoration: none;
+}
