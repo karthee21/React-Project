@@ -1,20 +1,40 @@
-#carouselExampleInterval{
+#carouselExampleInterval {
     padding-top: 120px;
+    height: 660px;
 }
-#carouselExampleInterval>div>div{
-    align-items: center;
-    display: grid;
-    grid-template-columns: 40% 40%;
-    background: #f6f9fc;
+
+.carousel-item {
     justify-content: space-evenly;
+    visibility: hidden;
+    transition: hidden 0ms;
 }
-#carouselExampleInterval>div>div>div:first-child h2{
+
+.active {
+    z-index: 1;
+    visibility: visible;
+}
+
+#item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40% 40%;
+    height: 522px;
+}
+
+#carouselExampleInterval>div>div>div:first-child h2 {
     margin-bottom: 50px;
     font-size: 65px;
     text-align: left;
 }
-#carouselExampleInterval>div>div>div:first-child p{
+
+#carouselExampleInterval>div>div>div:first-child p {
     font-size: 25px;
     color: #000000a6;
-    text-align: left; 
+    text-align: left;
+}
+
+#carouselExampleInterval div div div button {
+    border: none;
+    float: left;
+    padding: 10px;
 }

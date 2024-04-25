@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Header.css"
 function Header() {
     return (
-        <div className='header'>
+        <header className='header'>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <a class="navbar-brand">
@@ -28,13 +28,13 @@ function Header() {
                                 <a class="nav-link active" aria-current="page"><User /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"><ShoppingCart /></a>
+                                <Link class="nav-link active" aria-current="page" to="/cart"><ShoppingCart /></Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-        </div>
+        </header>
     )
 }
 

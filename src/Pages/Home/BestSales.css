@@ -38,7 +38,7 @@
     
 }
 
-.card a .heart:hover {
+.card .heart:hover {
     box-shadow: -2px -2px 3px rgba(247, 31, 31, 0.705);
     opacity: 0.8;
 }
