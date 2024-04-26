@@ -1,31 +1,34 @@
-import React, { useState } from 'react'
-import { Products, discoutProducts } from '../../Assets/products'
+import React from 'react'
+import { Products } from '../../Assets/products'
 import "./Single.css"
 import { LiaHeart, LiaStarSolid } from 'react-icons/lia';
 import { add } from '../Cart/CartSlice';
 import { Link, useParams } from 'react-router-dom';
 import { PlusCircle } from 'react-feather';
+import { useDispatch } from 'react-redux';
 
 const Single = () => {
-    const [addToCart, setAddToCart] = useState(false)
-    const [product, setProduct] = useState({})
+
 
     const { id } = useParams()
     const productDetails = Products.find((item) => item.id === id)
-    const item = discoutProducts[0]; // Assuming you are accessing the first item in the array for demonstration
-    const handleAdd = (product) => {
-        dispatchEvent(add(product))
-        setAddToCart(true)
+
+    // -----HANDLE ADD--------
+    const dispatch = useDispatch()
+
+    const handleAdd = (productDetails) => {
+        dispatch(add(productDetails))
+console.log(add)
     }
+
+    //--------SIMILAR PRODUCTS--------
+
     const similarProducts = Products.filter((item) => item.category === productDetails.category && item.id !== productDetails.id)
-    const getProduct = async () => {
-        const { data } = `/product/${discoutProducts.id}`
-        setProduct(data)
-    };
+
 
     return (
         <div className='single'>
-            <div class="container mt-4">
+            <div class="container">
                 {Object.keys(productDetails).length > 0 ? (
                     <div class="row">
                         <div class="col-md-6">
@@ -34,24 +37,32 @@ const Single = () => {
                         <div class="col-md-6">
                             <h2>{productDetails.productName}</h2>
                             <div class="rating">
-                                <section style={{ color: 'rgb(241 194 74)' }}>
-                                    {[...Array(5)].map((star, index) =>
+                                <section>
+                                    {[...Array(5)].map(() =>
                                         (<LiaStarSolid size={25} className='my-2' />))}
+                                        <p>{productDetails.avgRating} ratings</p>
                                 </section>
                             </div>
                             <section>
                                 <h3 class="price">${productDetails.price}</h3>
                                 <p class="category">Category: {productDetails.category}</p>
                             </section>
-                            <p class="description">{productDetails.description}</p>
+                            <p class="description">{productDetails.shortDesc}</p>
                             <form>
                                 <div class="mb-3">
                                     <input type="number" className='form-control' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                 </div>
-                                <button type="submit" class="btn btn-primary" onClick={() => {
-                                    handleAdd(product);  // Add product to cart
-                                }}>Add to Cart</button>
+                                <button type="submit" class="btn"
+                                    onClick={() => { handleAdd(productDetails) }}
+                                >Add to Cart</button>
                             </form>
+                        </div>
+                        <div>
+                            <section>
+                                <h4>description</h4>
+                                <h4 className='mx-4'>reviews</h4>
+                            </section>
+                            <p>{productDetails.description}</p>
                         </div>
                     </div>) : (
                     <div className="position-absolute top-50 start-50 translate-middle" role="status">
@@ -63,7 +74,11 @@ const Single = () => {
                     </div>
                 )}
             </div>
+
+            {/* ----------------------------------SIMILAR PRODUCTS------------------------- */}
+
             <div className='container'>
+                <h2>You might also like</h2>
                 <div className='row'>
                     {similarProducts.map((item, index) => (
                         <div key={index} className='col-md-4 my-3'>

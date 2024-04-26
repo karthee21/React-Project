@@ -15,15 +15,15 @@ const BestSales = () => {
             specificIds.includes(product.id) && ( // Only render if the product ID is in specificIds
               <div className='col-md-4 my-3' key={product.id}>
                 <div className='card'>
-                <Link to={`/Single/${product.id}`}>
-                  <LiaHeart className='heart' />
-                  <img src={product.imgUrl} alt={product.productName} />
-                  <p>{product.productName}</p>
-                  <section style={{ color: 'rgb(241 194 74)' }}>
-                    {[...Array(5)].map((star, index) =>
-                      (<LiaStarSolid size={25} className='my-2' />))}
-                  </section>
-                  <h2>${product.price}</h2>
+                  <Link to={`/Single/${product.id}`}>
+                    <LiaHeart className='heart' />
+                    <img src={product.imgUrl} alt={product.productName} />
+                    <p>{product.productName}</p>
+                    <section style={{ color: 'rgb(241 194 74)' }}>
+                      {[...Array(5)].map(() =>
+                        (<LiaStarSolid size={25} className='my-2' />))}
+                    </section>
+                    <h2>${product.price}</h2>
                   </Link>
                   <button className="position-absolute bottom-0 end-0 className='btn'">
                     <PlusCircle />

@@ -1,27 +1,59 @@
 .single{
     padding-top: 120px;
 }
-.row div:last-child{
-    text-align: justify;
-}
-.row div:last-child section{
-    display: flex;
-    align-items: baseline;
-}
-.row div:last-child section p{
-    margin: 10px 10px 10px 50px;
-}
-.row div:last-child form input{
-    width: 25%;
-}
-.row div:last-child .rating section span{
-    margin-left: 20px;
-}
 .row{
     display: flex;
     align-items: center;
+} 
+ .row div:nth-child(2){
+    text-align: justify;
+    align-items: center;
 }
+.row div:nth-child(2) section{
+    display: flex;
+    align-items: baseline;
+}
+.row div:nth-child(2) section p{
+    margin: 10px 10px 10px 50px;
+}
+.row>div:nth-child(2) form input{
+    width: 25%;
+}
+.row>div:nth-child(2) .rating section{
+    display: flex;
+    align-items: center;
+}
+.row>div:nth-child(2) .rating section .my-2{
+    color: rgb(241 194 74);
+    margin-right: 5px;
+}
+.row>div:nth-child(2) .rating section p{
+    margin-left: 5px;
+    color: black;
+}
+.row>div form button{
+    background: navy;
+    color: white;
+}
+.row>div:last-child h2{
+    text-align: left;
+}
+.row>div:last-child{
+    text-align: left;
+}
+.row>div:last-child section{
+    display: flex;
+    align-items: center;
+}
+.row>div:last-child section h4:last-child{
+    opacity: 0.7;
+}
+
 /* ---------------------- */
+
 a{
     text-decoration: none;
+}
+.container h2{
+    text-align: left;
 }

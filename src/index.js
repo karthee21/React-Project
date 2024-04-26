@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import store from './Pages/Cart/Store';
+import Store from './Pages/Cart/Store';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,15 +14,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
+      <Provider store={Store}>
         <ToastContainer
           position="top-right"
           autoClose={5000}
-        closeOnClick
-        pauseOnHover={false}
+          closeOnClick
+          pauseOnHover={false}
           theme="light"
         />
-          <App />
+        <App />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

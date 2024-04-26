@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { remove } from './CartSlice'
 
+
 import "./Cart.css"
 
 const Cart = ({ items }) => {
