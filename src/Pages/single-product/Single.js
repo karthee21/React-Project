@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Products } from '../../Assets/products'
 import "./Single.css"
 import { LiaHeart, LiaStarSolid } from 'react-icons/lia';
@@ -9,16 +9,16 @@ import { useDispatch } from 'react-redux';
 
 const Single = () => {
 
-
+    const [product, setproduct] = useState()
     const { id } = useParams()
     const productDetails = Products.find((item) => item.id === id)
 
     // -----HANDLE ADD--------
     const dispatch = useDispatch()
 
-    const handleAdd = (productDetails) => {
-        dispatch(add(productDetails))
-console.log(add)
+    const handleAdd = (product) => {
+        dispatch(add(product))
+        console.log(add)
     }
 
     //--------SIMILAR PRODUCTS--------
@@ -40,7 +40,7 @@ console.log(add)
                                 <section>
                                     {[...Array(5)].map(() =>
                                         (<LiaStarSolid size={25} className='my-2' />))}
-                                        <p>{productDetails.avgRating} ratings</p>
+                                    <p>{productDetails.avgRating} ratings</p>
                                 </section>
                             </div>
                             <section>
@@ -53,7 +53,7 @@ console.log(add)
                                     <input type="number" className='form-control' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                 </div>
                                 <button type="submit" class="btn"
-                                    onClick={() => { handleAdd(productDetails) }}
+                                    onClick={() => { handleAdd(product) }}
                                 >Add to Cart</button>
                             </form>
                         </div>

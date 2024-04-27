@@ -5,17 +5,16 @@ import { remove } from './CartSlice'
 
 import "./Cart.css"
 
-const Cart = ({ items }) => {
-    console.log(items)
+const Cart = () => {
     const cartData = useSelector((state) => state.cart)
+    console.log(cartData)
     const dispatch = useDispatch()
     const handleRemove = (id) => {
         dispatch(remove(id))
     }
     return (
         <div className='body'>
-            {
-                cartData && cartData.length > 0 ? (
+            {cartData && cartData.length > 0 ? (
                     cartData.map((item) => (
                         <div className='row my-5 border-top border-bottom p-3'>
                             <div className='col-md-4'>
@@ -27,7 +26,6 @@ const Cart = ({ items }) => {
                                 <h2>$ {item.price}</h2>
                             </div>
                             <div className='btn-div col-md-4'>
-                                <h4>{items}</h4>
                                 <button className="btn btn-outline-danger"
                                     onClick={() => { handleRemove(item.id) }}
                                 >Remove Form The Cart</button>
