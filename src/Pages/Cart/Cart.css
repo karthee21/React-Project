@@ -1,3 +1,35 @@
 .body{
     padding-top: 110px;
 }
+.second-body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 55% 20%;
+    justify-content: space-around;
+}
+.cart-row{
+    display: grid;
+    grid-template-columns: 45% 45% 5%;
+    justify-content: flex-start;
+    width: 100%;
+}
+.cart-row .btn-outline-danger{
+    position: relative;
+    bottom: 140px;
+}
+.cart-row aside{
+    position: absolute;
+    right: 10px;
+    top: 150px;
+}
+.cart-row div:nth-child(2) h4{
+    margin-bottom: 40px;
+}
+.cart-row div:nth-child(2) span{
+    font-size: larger;
+    font-weight: 600;
+    margin: 10px;
+}
+.second-body aside{
+    text-align: left;
+}

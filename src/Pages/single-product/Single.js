@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Products } from '../../Assets/products'
 import "./Single.css"
 import { LiaHeart, LiaStarSolid } from 'react-icons/lia';
@@ -6,19 +6,24 @@ import { add } from '../Cart/CartSlice';
 import { Link, useParams } from 'react-router-dom';
 import { PlusCircle } from 'react-feather';
 import { useDispatch } from 'react-redux';
+import {  toast } from 'react-toastify';
+
+
 
 const Single = () => {
 
-    const [product, setproduct] = useState()
     const { id } = useParams()
     const productDetails = Products.find((item) => item.id === id)
 
     // -----HANDLE ADD--------
     const dispatch = useDispatch()
-
-    const handleAdd = (product) => {
-        dispatch(add(product))
+    const handleAdd = () => {
+        dispatch(add({ ...productDetails }))
         console.log(add)
+    }
+    function click(item){
+        dispatch(add(item))
+        toast.dark("add to cart")
     }
 
     //--------SIMILAR PRODUCTS--------
@@ -48,14 +53,14 @@ const Single = () => {
                                 <p class="category">Category: {productDetails.category}</p>
                             </section>
                             <p class="description">{productDetails.shortDesc}</p>
-                            <form>
+                            <div>
                                 <div class="mb-3">
                                     <input type="number" className='form-control' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                 </div>
                                 <button type="submit" class="btn"
-                                    onClick={() => { handleAdd(product) }}
+                                    onClick={() => { handleAdd(productDetails) }}
                                 >Add to Cart</button>
-                            </form>
+                            </div>
                         </div>
                         <div>
                             <section>
@@ -88,12 +93,12 @@ const Single = () => {
                                     <img src={item.imgUrl} alt='img' className='w-100' />
                                     <h4>{item.productName}</h4>
                                     <section style={{ color: 'rgb(241 194 74)' }}>
-                                        {[...Array(5)].map((star, index) =>
+                                        {[...Array(5)].map(() =>
                                             (<LiaStarSolid size={25} className='my-2' />))}
                                     </section>
                                     <h3>${item.price}</h3>
                                 </Link>
-                                <button className="position-absolute bottom-0 end-0">
+                                <button  onClick={()=>click(item)} className="position-absolute bottom-0 end-0">
                                     <PlusCircle />
                                 </button>
                             </div>

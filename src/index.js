@@ -5,10 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import store from './Pages/Cart/store';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import store from './Pages/Cart/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +17,7 @@ root.render(
       <Provider store={store}>
         <ToastContainer
           position="top-right"
-          autoClose={5000}
+          autoClose={2500}
           closeOnClick
           pauseOnHover={false}
           theme="light"

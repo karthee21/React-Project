@@ -11,13 +11,22 @@
 }
 .row div:nth-child(2) section{
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
-.row div:nth-child(2) section p{
+.row div:nth-child(2) div p{
     margin: 10px 10px 10px 50px;
 }
-.row>div:nth-child(2) form input{
+.row>div:nth-child(2) div input{
     width: 25%;
+}
+.row>div:nth-child(2) div .btn{
+    background: navy;
+    color: white;
+}
+.row>div:nth-child(2) div .btn:hover{
+    background:rgba(0, 0, 128, 0.829);
+    color: white;
+    box-shadow: 0px 0px 7px navy;
 }
 .row>div:nth-child(2) .rating section{
     display: flex;

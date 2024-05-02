@@ -5,9 +5,9 @@ import { PlusCircle } from 'react-feather';
 import "./BigDis.css"
 import { Link } from 'react-router-dom';
 function BigDis() {
+    {/* -----------------BIG DISCOUNT------------------ */}
     return (
         <>
-            {/* -----------------BIG DISCOUNT------------------ */}
             <div className='big-dis'>
                 <div className='container'>
                     <div className='row'>

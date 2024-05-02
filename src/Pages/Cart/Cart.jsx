@@ -1,39 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { remove } from './CartSlice'
 
-
 import "./Cart.css"
-
 const Cart = () => {
     const cartData = useSelector((state) => state.cart)
-    console.log(cartData)
     const dispatch = useDispatch()
+    console.log(cartData)
     const handleRemove = (id) => {
         dispatch(remove(id))
     }
+    const [quantity, setQuantity] = useState(1)
+let i =0
+i++
+    const total = cartData[i].price *  quantity 
+    console.log(cartData[i].price)
     return (
         <div className='body'>
-            {cartData && cartData.length > 0 ? (
-                    cartData.map((item) => (
-                        <div className='row my-5 border-top border-bottom p-3'>
-                            <div className='col-md-4'>
-                                <img src={item.image} className='image' />
+            <div className='second-body'>
+                <div>
+                    {cartData && cartData.length > 0 ? (
+                        cartData.map((item) => (
+                            <div key={item.id} className='row my-3 border-top border-bottom cart-row'>
+                                <div className=''>
+                                    <img src={item.imgUrl} alt={item.productName} className='image w-100' />
+                                </div>
+                                <div className='pro-price'>
+                                    <h4>{item.productName}</h4>
+
+                                    <span>$ {item.price}  </span>
+                                    <span>✕</span>
+                                    <span>{quantity}</span>
+                                    <span>=</span>
+                                    <span>{total}</span>
+
+                                </div>
+                                    <button className="btn btn-outline-danger"
+                                        onClick={() => { handleRemove(item.id) }}
+                                    >✕</button>
                             </div>
-                            <div className='col-md-4'>
-                                <h4>{item.title}</h4>
-                                <h3>{item.category}</h3>
-                                <h2>$ {item.price}</h2>
-                            </div>
-                            <div className='btn-div col-md-4'>
-                                <button className="btn btn-outline-danger"
-                                    onClick={() => { handleRemove(item.id) }}
-                                >Remove Form The Cart</button>
-                            </div>
-                        </div>
-                    ))
-                ) : <p>Please add some products</p>
-            }
+                        ))
+                    ) : <p>Please add some products</p>
+                    }
+                </div>
+                <aside className='mt-3'>
+                    <h2>Cart Summary</h2>
+                    <h6>Total Price</h6>
+                </aside>
+            </div>
         </div>
     )
 }
