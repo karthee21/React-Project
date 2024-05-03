@@ -1,11 +1,28 @@
 import React from 'react'
-import { discoutProducts } from '../../Assets/products'
+import { Products, discoutProducts } from '../../Assets/products'
 import { LiaHeart, LiaStarSolid } from "react-icons/lia";
 import { PlusCircle } from 'react-feather';
 import "./BigDis.css"
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { add } from '../Cart/CartSlice';
+import { toast } from 'react-toastify';
 function BigDis() {
-    {/* -----------------BIG DISCOUNT------------------ */}
+    const { id } = useParams()
+    
+    const productDetails = Products.find((Discount) => Discount.id === id)
+    
+    
+    const dispatch = useDispatch()
+    const handleAdd = () => {
+        dispatch(add({ ...productDetails }))
+        console.log(add)
+    }
+    function click(Discount){
+        dispatch(add(Discount))
+        toast.dark("added to cart")
+    }
+    // -----------------BIG DISCOUNT------------------ 
     return (
         <>
             <div className='big-dis'>
@@ -25,7 +42,9 @@ function BigDis() {
                                         </section>
                                         <h3>${Discount.price}</h3>
                                     </Link>
-                                    <button className="position-absolute bottom-0 end-0">
+                                    <button onClick={() => [click(Discount),
+                                    handleAdd(productDetails)]
+                                    } className="position-absolute bottom-0 end-0">
                                         <PlusCircle />
                                     </button>
                                 </div>

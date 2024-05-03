@@ -23,7 +23,7 @@ const Single = () => {
     }
     function click(item){
         dispatch(add(item))
-        toast.dark("add to cart")
+        toast.dark("added to cart")
     }
 
     //--------SIMILAR PRODUCTS--------
@@ -98,7 +98,9 @@ const Single = () => {
                                     </section>
                                     <h3>${item.price}</h3>
                                 </Link>
-                                <button  onClick={()=>click(item)} className="position-absolute bottom-0 end-0">
+                                <button  onClick={()=>[click(item),
+                                 handleAdd(productDetails) ]
+                                } className="position-absolute bottom-0 end-0">
                                     <PlusCircle />
                                 </button>
                             </div>

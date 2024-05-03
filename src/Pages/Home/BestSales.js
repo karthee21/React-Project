@@ -3,9 +3,26 @@ import { PlusCircle } from 'react-feather';
 import { Products } from '../../Assets/products';
 import "./BestSales.css"
 import { LiaHeart, LiaStarSolid } from 'react-icons/lia';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { add } from '../Cart/CartSlice';
+import { toast } from 'react-toastify';
 const BestSales = () => {
   const specificIds = ['01', '02', '03', '26', '04', '05', '06', '27',];
+  const { id } = useParams()
+
+  const productDetails = Products.find((product) => product.idproduct === id)
+
+
+  const dispatch = useDispatch()
+    const handleAdd = () => {
+        dispatch(add({ ...productDetails }))
+        console.log(add)
+    }
+    function click(product){
+        dispatch(add(product))
+        toast.dark("added to cart")
+    }
   return (
     <div className='best-sales'>
 
@@ -25,7 +42,9 @@ const BestSales = () => {
                     </section>
                     <h2>${product.price}</h2>
                   </Link>
-                  <button className="position-absolute bottom-0 end-0 className='btn'">
+                  <button onClick={() => [click(product),
+                  handleAdd(productDetails)]
+                  } className="position-absolute bottom-0 end-0 className='btn'">
                     <PlusCircle />
                   </button>
                 </div>
